@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Create a Resolution Pixel
 
-This guide assumes you are logged into the [CDP resolution application](https://app.cdpresolution.com/).
+This guide walks you through setting up your first resolution pixel. It also assumes you are logged into the [CDP resolution application](https://app.cdpresolution.com/).
 
 1. From the left side navigation, click on the 'Administration'.
 2. Click on 'Website Script'.

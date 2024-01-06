@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Install your Resolution Pixel
 
-This guide assumes you have _[created your first pixel](/docs/resolution-pixel/create-a-pixel)_.
+This guide walks you through installing your resolution pixel. It also assumes you have _[created your first pixel](/docs/resolution-pixel/create-a-pixel)_.
 
 ## Simple Installation
 
