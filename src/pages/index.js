@@ -13,7 +13,7 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          <img style={{ maxWidth: '500px' }} src="https://irp.cdn-website.com/744880d9/dms3rep/multi/Group+1679.svg" />
+          <img className={styles.heroLogo} src="https://irp.cdn-website.com/744880d9/dms3rep/multi/Group+1679.svg" />
         </Heading>
         <p className={`hero__subtitle ${styles.heroSubtitle} margin-top--xl`}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
