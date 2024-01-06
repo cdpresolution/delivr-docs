@@ -9,8 +9,8 @@ This guide assumes you are logged into the [CDP resolution application](https://
 1. From the left side navigation, click on the 'Administration'.
 2. Click on 'Website Script'.
 3. Click on the 'New Scripts' button.
-4. Enter a value for the 'Purpose' input field. See [Purpose Details](#purpose-field)
-5. Enter a value for the 'Partner' input field. See [Partner Details](#partner-field)
+4. Enter a value for the 'Purpose' input field.
+5. Enter a value for the 'Partner' input field.
 6. Enter a value for the 'Description' input field.
 7. Click on the 'Save' button.
 8. Congratulations on creating your first resolution pixel!
