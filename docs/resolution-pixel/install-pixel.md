@@ -85,7 +85,7 @@ For more detailed instructions and parameter descriptions, see the Detailed Docu
 
 ## **Implementation Examples**
 
-Replace `[client_id]` with your client\*id and `[purpose]` with the intended purpose. To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
+Replace `[client_id]` with your client_id and `[purpose]` with the intended purpose. To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
 
 ### Iframe Tag
 
