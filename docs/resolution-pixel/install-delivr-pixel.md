@@ -20,19 +20,14 @@ Insert the following script tag in the **`<head>`** or **`<body>`** section of y
 After adding the library, use the **`delivr.resolution()`** function to initialize the pixel. Replace **`'your_client_id_here'`** with your actual client ID.
 
 ```html
-htmlCopy code
-<script>
-  delivr.resolution('init', { clientId: 'your_client_id_here' });
-</script>
-```
-
-## **Advanced Configuration**
-
-You can add additional configuration options to the **`delivr.resolution()`** function to further customize the tracking. For example, to track a specific campaign or partner:
-
-```html
 <script>
   delivr.resolution('init', {
+    clientId: 'your_client_id_here'
+    /**
+     *
+     * You can add additional configuration options further customize the tracking.
+     * For example, to track a specific user, campaign and partner:
+     */
     user_id: 'unique_user_identifier',
     campaign: 'summer_sale',
     partner: 'partner_name',
