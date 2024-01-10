@@ -14,14 +14,17 @@ Decide on the custom property name and what it represents. For example, if you'r
 
 - In the JavaScript setup, extend the **`puid`** object to include your custom property.
 - For instance, if your custom property is a customer identifier like **`customer_id`**, your **`puid`** object would look something like this:
-  ```jsx
-  const puid = {
-    client_id: clientId,
-    purpose: 'website',
-    partner: 'my_partner',
-    customer_id: 'your_customer_id_here', // Add your custom property here
-  };
-  ```
+
+To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
+
+```jsx
+const puid = {
+  client_id: clientId,
+  purpose: 'website',
+  partner: 'my_partner',
+  customer_id: 'your_customer_id_here', // Add your custom property here
+};
+```
 
 ### 3. **Stringify and Encode PUID**:
 

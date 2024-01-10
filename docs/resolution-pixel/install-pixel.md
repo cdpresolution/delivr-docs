@@ -21,6 +21,8 @@ This guide walks you through installing your resolution pixel. It also assumes y
 
 If you are familar with Javascript, this section demonstrates how to set up the resolution pixel with necessary parameters and advanced customization.
 
+To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
+
 ```jsx
 // Step 1: Define your client_id
 // Replace 'your_client_id_here' with your actual CDP Resolution account client_id
@@ -56,7 +58,7 @@ document.body.appendChild(script);
 
 In this script:
 
-1. **Define Your Client ID**: Replace **`'your_client_id_here'`** with your actual client ID.
+1. **Define Your Client ID**: Replace **`'your_client_id_here'`** with your actual client ID. To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
 2. **Set Up the PUID Object**: This object can include any additional properties you want to track.
 3. **Stringify and Encode**: Convert the **`puid`** object into a properly formatted string for URL use.
 4. **Create the Pixel URL**: Insert the provided **`pid`** value and the encoded **`puid`** string.
@@ -75,7 +77,7 @@ For more detailed instructions and parameter descriptions, see the Detailed Docu
 
 - **Description**: A JSON object containing various properties.
 - **Properties**:
-  - **`client_id`** (required): Unique identifier for your CDP Resolution account.
+  - **`client_id`** (required): Unique identifier for your CDP Resolution account. To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
   - **`purpose`** (required): Specifies where the pixel is implemented.
   - _Additional properties_: You can add custom properties for enhanced tracking (e.g., campaign tracking).
 
@@ -83,7 +85,7 @@ For more detailed instructions and parameter descriptions, see the Detailed Docu
 
 ## **Implementation Examples**
 
-Replace `[client_id]` with your client_id and `[purpose]` with the intended purpose.
+Replace `[client_id]` with your client\*id and `[purpose]` with the intended purpose. To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
 
 ### Iframe Tag
 
