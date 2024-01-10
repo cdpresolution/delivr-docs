@@ -41,3 +41,8 @@ Example partners:
 - `Customer B` - This indicates that the incoming traffic is from 'Customer B'.
 
 Hopfully you can see how you might use this to associate to affiliate partners, customers, etcs.
+
+## Getting your `client_id`
+
+1. Navigate to the _[Website Script](https://app.cdpresolution.com/administration/website-script)_ page.
+2. Click the copy icon next to the Client Id, above the table.

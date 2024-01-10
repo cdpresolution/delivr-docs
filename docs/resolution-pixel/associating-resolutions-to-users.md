@@ -20,6 +20,8 @@ See _[Install Your Resolution Pixel](/docs/resolution-pixel/install-pixel)_ for 
 
 Modify the Pixel setup to include a **`user_id`** property. This identifier should uniquely represent each user in your system.
 
+To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
+
 ```jsx
 const puid = {
   client_id: 'your_client_id_here',
