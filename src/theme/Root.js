@@ -1,23 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import mixpanel from 'mixpanel-browser';
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
-
-mixpanel.init('714358b0cdb37093c8d465d78fc49dbe', { debug: false, track_pageview: true, persistence: 'localStorage' });
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 //Wrapper for all pages to ensure user is identified
 const WithUser = ({ children }) => {
   const { isAuthenticated, loginWithRedirect, getAccessTokenSilently, user } = useAuth0();
 
   const checkUserSession = async () => {
+    const {
+      siteConfig: { customFields },
+    } = useDocusaurusContext();
+
     if (!isAuthenticated) {
       try {
         await getAccessTokenSilently({
-          audience: 'https://dev-cfnhggg28yy650dx.us.auth0.com/api/v2/',
+          audience: customFields.AUTH0_AUDIENCE,
         });
         // User is silently authenticated
       } catch (error) {
         // Silent authentication failed, do nothing
-        // loginWithRedirect();
       }
     }
   };
@@ -32,12 +34,18 @@ const WithUser = ({ children }) => {
 };
 
 export default function Root({ children }) {
+  const {
+    siteConfig: { customFields },
+  } = useDocusaurusContext();
+  useEffect(() => {
+    mixpanel.init(customFields.MIX_PANEL_KEY);
+  }, []);
   return (
     <Auth0Provider
-      domain="auth.cdpresolution.com"
-      clientId="QPH5m83W3OsodidDrPFqhITJZUNBGY5y"
+      domain={customFields.AUTH0_DOMAIN}
+      clientId={customFields.AUTH0_CLIENT_ID}
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: customFields.AUTH0_REDIRECT_URL,
       }}
     >
       <WithUser>{children}</WithUser>

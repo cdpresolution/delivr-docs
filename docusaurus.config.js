@@ -1,3 +1,4 @@
+import 'dotenv/config';
 // @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
@@ -8,6 +9,13 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  customFields: {
+    MIX_PANEL_KEY: process.env.MIX_PANEL_KEY,
+    AUTH0_AUDIENCE: process.env.AUTH0_AUDIENCE,
+    AUTH0_REDIRECT_URL: process.env.AUTH0_REDIRECT_URL,
+    AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
+    AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
+  },
   title: 'Delivr',
   tagline: 'Delivr Docs, Guides & How-tos',
   favicon: 'img/favicon.ico',
