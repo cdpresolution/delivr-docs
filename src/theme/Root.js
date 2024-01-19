@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 //Wrapper for all pages to ensure user is identified
 const WithUser = ({ children }) => {
-  const { isAuthenticated, loginWithRedirect, getAccessTokenSilently, user } = useAuth0();
+  const { isAuthenticated, getAccessTokenSilently, user } = useAuth0();
   const {
     siteConfig: { customFields },
   } = useDocusaurusContext();
@@ -35,10 +35,11 @@ export default function Root({ children }) {
   const {
     siteConfig: { customFields },
   } = useDocusaurusContext();
+
   useEffect(() => {
     mixpanel.init(customFields.MIX_PANEL_KEY);
-  }, []);
-  return (
+  }, [customFields.MIX_PANEL_KEY]);
+  return customFields.AUTH0_DOMAIN ? (
     <Auth0Provider
       domain={customFields.AUTH0_DOMAIN}
       clientId={customFields.AUTH0_CLIENT_ID}
@@ -48,5 +49,5 @@ export default function Root({ children }) {
     >
       <WithUser>{children}</WithUser>
     </Auth0Provider>
-  );
+  ) : null;
 }
