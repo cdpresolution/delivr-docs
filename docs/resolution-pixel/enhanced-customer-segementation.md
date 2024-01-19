@@ -2,6 +2,10 @@
 sidebar_position: 4
 ---
 
+import ClientID from '@site/src/components/client-id/ClientID';
+import FindClientID from '@site/src/components/client-id/FindClientID';
+import CodeblockWithClientID from '@site/src/components/client-id/CodeblockWithClientID';
+
 # Customer Segmentation
 
 This guide will walk you through customizing and installing the pixel with a customer identifier to enhanced segmentation tracking and analytics.
@@ -15,16 +19,18 @@ Decide on the custom property name and what it represents. For example, if you'r
 - In the JavaScript setup, extend the **`puid`** object to include your custom property.
 - For instance, if your custom property is a customer identifier like **`customer_id`**, your **`puid`** object would look something like this:
 
-To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
+<FindClientID />
 
-```jsx
+<CodeblockWithClientID className="language-js">
+{`
 const puid = {
-  client_id: clientId,
+  client_id: '[client_id]',
   purpose: 'website',
   partner: 'my_partner',
   customer_id: 'your_customer_id_here', // Add your custom property here
 };
-```
+`}
+</CodeblockWithClientID>
 
 ### 3. **Stringify and Encode PUID**:
 
@@ -37,23 +43,26 @@ Continue with creating the pixel URL using the modified **`puid`** object and im
 ### 5. **Example Implementation**:
 
 - **Script Tag**: With the custom property added, your script tag for implementation would look like this:
-  ```html
-  <script>
-    const clientId = 'your_client_id_here';
-    const pid = '48a021d87720f17403d730658979d7f60e9cec91937e82072c66f611748dd47d';
-    const puid = {
-      client_id: clientId,
-      purpose: 'website',
-      partner: 'my_partner',
-      customer_id: 'your_customer_id_here', // Your custom property
-    };
-    const encodedPuid = encodeURIComponent(JSON.stringify(puid));
-    const pixelUrl = `https://a.usbrowserspeed.com/cs?pid=${pid}&puid=${encodedPuid}`;
-    const script = document.createElement('script');
-    script.src = pixelUrl;
-    document.body.appendChild(script);
-  </script>
-  ```
+
+  <CodeblockWithClientID className="language-html">
+  {`
+   <script>
+      const clientId = '[client_id]';
+      const pid = '48a021d87720f17403d730658979d7f60e9cec91937e82072c66f611748dd47d';
+      const puid = {
+        client_id: clientId,
+        purpose: 'website',
+        partner: 'my_partner',
+        customer_id: 'your_customer_id_here', // Your custom property
+      };
+      const encodedPuid = encodeURIComponent(JSON.stringify(puid));
+      const pixelUrl = 'https://a.usbrowserspeed.com/cs?pid=' + pid + '&puid=' + encodedPuid;
+      const script = document.createElement('script');
+      script.src = pixelUrl;
+      document.body.appendChild(script);
+    </script>
+  `}
+  </CodeblockWithClientID>
 
 ### 6. **Testing**:
 
