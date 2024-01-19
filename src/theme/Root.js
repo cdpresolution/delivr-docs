@@ -6,12 +6,10 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 //Wrapper for all pages to ensure user is identified
 const WithUser = ({ children }) => {
   const { isAuthenticated, loginWithRedirect, getAccessTokenSilently, user } = useAuth0();
-
+  const {
+    siteConfig: { customFields },
+  } = useDocusaurusContext();
   const checkUserSession = async () => {
-    const {
-      siteConfig: { customFields },
-    } = useDocusaurusContext();
-
     if (!isAuthenticated) {
       try {
         await getAccessTokenSilently({
