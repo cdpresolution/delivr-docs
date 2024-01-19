@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import FindClientID from '@site/src/components/client-id/FindClientID';
+
 # Create a Resolution Pixel
 
 This guide walks you through setting up your first resolution pixel. It also assumes you are logged into the [CDP resolution application](https://app.cdpresolution.com/).
@@ -43,6 +45,8 @@ Example partners:
 Hopfully you can see how you might use this to associate to affiliate partners, customers, etcs.
 
 ## Getting your `client_id`
+
+<FindClientID customLink=" within these docs. Or you can follow the steps below."/>
 
 1. Navigate to the _[Website Script](https://app.cdpresolution.com/administration/website-script)_ page.
 2. Click the copy icon next to the Client Id, above the table.

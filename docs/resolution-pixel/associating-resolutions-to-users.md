@@ -2,6 +2,10 @@
 sidebar_position: 3
 ---
 
+import ClientID from '@site/src/components/client-id/ClientID';
+import FindClientID from '@site/src/components/client-id/FindClientID';
+import CodeblockWithClientID from '@site/src/components/client-id/CodeblockWithClientID';
+
 # Associating Resolutions to Users
 
 ## **Introduction**
@@ -20,16 +24,18 @@ See _[Install Your Resolution Pixel](/docs/resolution-pixel/install-pixel)_ for 
 
 Modify the Pixel setup to include a **`user_id`** property. This identifier should uniquely represent each user in your system.
 
-To find your client Id, see _[getting your `client_id`](/docs/resolution-pixel/create-a-pixel#getting-your-client_id)_
+<FindClientID />
 
-```jsx
+<CodeblockWithClientID className="language-js">
+{`
 const puid = {
-  client_id: 'your_client_id_here',
+  client_id: '[client_id]',
   purpose: 'website',
   partner: 'my_partner',
   user_id: 'unique_user_identifier', // Add the user_id property
 };
-```
+`}
+</CodeblockWithClientID>
 
 ### **Step 3: Stringify and Encode the PUID Object**
 
