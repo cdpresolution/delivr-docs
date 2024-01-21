@@ -9,25 +9,25 @@ const WithUser = ({ children }) => {
   const {
     siteConfig: { customFields },
   } = useDocusaurusContext();
+
+  //TODO: Check if user is authenticated and if so, try to silentily identify them
   const checkUserSession = async () => {
-    if (!isAuthenticated) {
-      try {
-        await getAccessTokenSilently({
-          audience: customFields.AUTH0_AUDIENCE,
-        });
-        // User is silently authenticated
-      } catch (error) {
-        // Silent authentication failed, do nothing
-      }
+    console.log('checking user session');
+    try {
+      await getAccessTokenSilently({
+        //   audience: 'https://dev-cfnhggg28yy650dx.us.auth0.com/api/v2/',
+      });
+      // User is silently authenticated
+    } catch (error) {
+      console.log(error);
+      // Silent authentication failed, do nothing
     }
   };
   useEffect(() => {
     if (user) {
       mixpanel.identify(user.id);
-    } else {
-      checkUserSession();
     }
-  }, [user]);
+  }, [user, isAuthenticated]);
   return <>{children}</>;
 };
 
@@ -39,15 +39,16 @@ export default function Root({ children }) {
   useEffect(() => {
     mixpanel.init(customFields.MIX_PANEL_KEY);
   }, [customFields.MIX_PANEL_KEY]);
-  return customFields.AUTH0_DOMAIN ? (
+
+  return (
     <Auth0Provider
-      domain={customFields.AUTH0_DOMAIN}
-      clientId={customFields.AUTH0_CLIENT_ID}
+      domain="auth.cdpresolution.com"
+      clientId="QPH5m83W3OsodidDrPFqhITJZUNBGY5y"
       authorizationParams={{
-        redirect_uri: customFields.AUTH0_REDIRECT_URL,
+        redirect_uri: window.location.origin,
       }}
     >
       <WithUser>{children}</WithUser>
     </Auth0Provider>
-  ) : null;
+  );
 }
