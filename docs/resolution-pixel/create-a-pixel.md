@@ -46,7 +46,5 @@ Hopfully you can see how you might use this to associate to affiliate partners, 
 
 ## Getting your `client_id`
 
-<FindClientID customLink=" within these docs. Or you can follow the steps below."/>
-
 1. Navigate to the _[Website Script](https://app.cdpresolution.com/administration/website-script)_ page.
 2. Click the copy icon next to the Client Id, above the table.
