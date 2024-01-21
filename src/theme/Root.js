@@ -45,7 +45,7 @@ export default function Root({ children }) {
       domain="auth.cdpresolution.com"
       clientId="QPH5m83W3OsodidDrPFqhITJZUNBGY5y"
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: customFields.AUTH0_REDIRECT_URL,
       }}
     >
       <WithUser>{children}</WithUser>
