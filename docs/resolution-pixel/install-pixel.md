@@ -86,7 +86,7 @@ For more detailed instructions and parameter descriptions, see the Detailed Docu
 
 ## **Implementation Examples**
 
-- <FindClientID customLink=". Then replace [client_id] with your Client ID" />
+- <FindClientID customLink="Replace [client_id] with your Client ID" />
 - Replace [purpose] with the intended purpose
 
 ### Iframe Tag

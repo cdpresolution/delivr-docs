@@ -6,17 +6,17 @@ import CodeBlock from '@theme/CodeBlock';
 
 const CodeblockWithClientID = ({ children, placeholder = 'insert your client id here', ...props }) => {
   const [processedCode, setProcessedCode] = useState('');
-  const { user } = useAuth0();
+  // const { user } = useAuth0();
 
   useEffect(() => {
     let code = children;
-    if (user && user.Organization_Hash) {
-      code = code.replace(/\[client_id\]/g, user.Organization_Hash);
-    } else {
-      code = code.replace(/\[client_id\]/g, placeholder);
-    }
+    // // if (user && user.Organization_Hash) {
+    // //   code = code.replace(/\[client_id\]/g, user.Organization_Hash);
+    // // } else {
+    code = code.replace(/\[client_id\]/g, placeholder);
+    // }
     setProcessedCode(code);
-  }, [children, user]);
+  }, [children]);
 
   return <CodeBlock {...props}>{processedCode}</CodeBlock>;
 };

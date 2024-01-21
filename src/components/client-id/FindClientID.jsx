@@ -5,10 +5,19 @@ import { useAuth0 } from '@auth0/auth0-react';
 import ClientID from './ClientID';
 import LoginLink from '../session/LoginLink';
 
+//TODO: Rework this after getting auth to work
+// const defaultLink = (
+//   <>
+//     {' '}
+//     or see{' '}
+//     <a href="/docs/resolution-pixel/create-a-pixel#getting-your-client_id">
+//       <i>getting your Client ID</i>
+//     </a>
+//   </>
+// );
 const defaultLink = (
   <>
-    {' '}
-    or see{' '}
+    See{' '}
     <a href="/docs/resolution-pixel/create-a-pixel#getting-your-client_id">
       <i>getting your Client ID</i>
     </a>
@@ -16,22 +25,23 @@ const defaultLink = (
 );
 
 export default function FindClientID({ customLink = defaultLink }) {
-  const { isAuthenticated } = useAuth0();
+  //TODO: enable this after getting auth to work
+  // const { isAuthenticated } = useAuth0();
 
-  if (isAuthenticated) {
-    return (
-      <>
-        <strong>Client ID:</strong>{' '}
-        <code>
-          <ClientID />
-        </code>
-      </>
-    );
-  }
+  // if (isAuthenticated) {
+  //   return (
+  //     <>
+  //       <strong>Client ID:</strong>{' '}
+  //       <code>
+  //         <ClientID />
+  //       </code>
+  //     </>
+  //   );
+  // }
 
   return (
     <>
-      <LoginLink /> to view your Client ID
+      {/* <LoginLink /> to view your Client ID */}
       {customLink}
     </>
   );
