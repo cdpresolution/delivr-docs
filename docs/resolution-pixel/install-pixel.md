@@ -5,6 +5,7 @@ sidebar_position: 2
 import ClientID from '@site/src/components/client-id/ClientID';
 import FindClientID from '@site/src/components/client-id/FindClientID';
 import CodeblockWithClientID from '@site/src/components/client-id/CodeblockWithClientID';
+import ScriptTag from '@site/src/components/script-tags/ScriptTag';
 
 # Install your Resolution Pixel
 
@@ -27,35 +28,15 @@ If you are familar with Javascript, this section demonstrates how to set up the 
 
 <FindClientID />
 
-<CodeblockWithClientID className="language-js">
+<ScriptTag>
 {`
-const clientId = "[client_id]";
-//pid will always be the value below
-const pid = '48a021d87720f17403d730658979d7f60e9cec91937e82072c66f611748dd47d';
-
-// Step 2: Create the puid object
-// Include additional properties as needed for tracking
 const puid = {
-client_id: clientId,
-purpose: 'website',// replace with your value
-partner: 'my_partner',//replace with your value
-// Add other properties here, e.g., campaign: 'my_campaign'
+  client_id: clientId,
+  purpose: 'website',// replace with your value
+  partner: 'my_partner',//replace with your value
 };
-
-// Step 3: JSON stringify and encode the puid object
-// This is necessary for properly formatting the URL
-const encodedPuid = encodeURIComponent(JSON.stringify(puid));
-
-// Step 4: Create the pixel URL
-const pixelUrl = 'https://a.usbrowserspeed.com/cs?pid=' + pid + '&puid=' + encodedPuid;
-
-// Step 5: Implement the pixel
-// You can use an iframe or a script tag method. Here's an example using a script tag:
-const script = document.createElement('script');
-script.src = pixelUrl;
-document.body.appendChild(script);
 `}
-</CodeblockWithClientID>
+</ScriptTag>
 
 In this script:
 
