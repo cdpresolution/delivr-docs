@@ -15,10 +15,11 @@ const ScriptTag = ({ children, clientIDPlaceholder = 'insert your client id here
   }, [children]);
 
   const clientId = clientIDPlaceholder;
-  const className = props.className ? props.className : 'language-js';
+  const className = props.className ? props.className : 'language-html';
   return (
     <CodeBlock {...props} className={className}>
-      {`const clientId = "${clientId}"; 
+      {`<script type="text/javascript">
+const clientId = "${clientId}"; 
 //pid will always be the value below 
 const pid = '48a021d87720f17403d730658979d7f60e9cec91937e82072c66f611748dd47d'; 
 // Step 2: Create the puid object // Include additional properties as needed for tracking`}
@@ -32,7 +33,8 @@ const pixelUrl = 'https://a.usbrowserspeed.com/cs?pid=' + pid + '&puid=' + encod
 // You can use an iframe or a script tag method. Here's an example using a script tag:
 const script = document.createElement('script');
 script.src = pixelUrl;
-document.body.appendChild(script);`}
+document.body.appendChild(script);
+</script>`}
     </CodeBlock>
   );
 };
