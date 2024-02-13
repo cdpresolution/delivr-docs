@@ -4,7 +4,7 @@ sidebar_position: 19
 
 # Turn the Resolution Pixel Off or On
 
-To turn the Resolution Pixel off or back on again, you must disable/enable or add/remove the Resolution Pixel Javascript code snippet from the platforms where you initially added the script.
+To turn the Resolution Pixel off or back on again, you must disable/enable or add/remove the Resolution Pixel Javascript code snippet from the platforms where you initially added the resolution pixel.
 
 To disable/remove the Resolution Pixel you simply need to reverse the steps you took to add the Resolution Pixel. You can find the instructions, that you need to reverse, for your desired platform below:
 
