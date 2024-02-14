@@ -6,6 +6,8 @@ import FindClientID from '@site/src/components/client-id/FindClientID';
 
 # Create a Resolution Pixel
 
+![Beyond setting up](./static/img/delivr.docs.png)
+
 This guide walks you through setting up your first resolution pixel. It also assumes you are logged into the [CDP resolution application](https://app.cdpresolution.com/).
 
 1. From the left side navigation, click on the 'Administration'.
