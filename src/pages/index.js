@@ -13,9 +13,9 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          <img className={styles.heroLogo} src="/img/panel.svg" />
+          <img className={styles.heroLogo} src="/img/panel.svg"/>
         </Heading>
-        <p className={`hero__subtitle ${styles.heroSubtitle} margin-top--xl`}>{siteConfig.tagline}</p>
+        <p className={`hero__subtitle ${styles.heroSubtitle}`}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link className="button button--secondary button--lg" to="/docs/resolution-pixel/create-a-pixel">
             Setup your resolution pixel
