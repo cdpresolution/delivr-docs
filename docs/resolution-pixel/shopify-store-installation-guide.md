@@ -44,27 +44,46 @@ Follow these steps to add the Resolution Pixel Javascript code snippet to Shopif
 5. Add the Javascript Code Snippet above the `<head>` tag in the code.
 6. Click **Save**.
 
+If your site has Klaviyo forms or pop-ups, paste the following suppression script below the Resolution Pixel Javascript code snippet that you just added:
+
+```
+<script>
+  window.addEventListener("klaviyoForms", function (e) {
+    if (e.detail.type == "submit") {
+      geq.suppress();
+    }
+  });
+</script>
+```
+
 ### Install Resolution Pixel on the Shopify Checkout (Revenue Tracking)
 
 Follow these steps to add the Resolution Pixel Javascript code snippet to Shopify Checkout:
 
 1. From Shopify **Settings**, go to **Checkout → Order status → Additional scripts** page.
 2. Add the Javascript Code Snippet into the text box.
-3. Add three more fields in the `const puid = { };` object of the code. The three new fields that you need to add are:
+3. Add five more fields in the `const puid = { };` object of the code. The three new fields that you need to add are:
     * `order_number: '{{ order_number }}',`
     * `order_amount: '{{ total_price | money_without_currency }}',`
-    * `order_email: '{{ order_email }}',` 
+    * `order_email: '{{ order_email }}',`
+    * `session_id: shopifySessionID,`
+	  * `cart_id: shopifyCartID,`
 4. Click **Save**.
 
 The new script will look something like this:
 
 <ScriptTag>
 {`
+function getCookie(t){let e=document.cookie.split(";");for(let i=0;i<e.length;i++){let l=e[i].trim();if(l.startsWith(t+"="))return l.substring(t.length+1)}return"null"}
+const shopifySessionID = getCookie('_shopify_s');
+const shopifyCartID = getCookie('cart');
 const puid = {
-  client_id: clientId,
-  order_number: '{{ order_number }}',
-  order_amount: '{{ total_price | money_without_currency }}',
-  order_email: '{{ order_email }}',
+	client_id: clientId,
+	order_number: '{{ order_number }}',
+	order_amount: '{{ total_price | money_without_currency }}',
+	order_email: '{{ order_email }}',
+	session_id: shopifySessionID,
+	cart_id: shopifyCartID,
 };
 `}
 </ScriptTag>
