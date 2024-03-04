@@ -67,7 +67,7 @@ Follow these steps to add the Resolution Pixel Javascript code snippet to Shopif
     * `order_amount: '{{ total_price | money_without_currency }}',`
     * `order_email: '{{ order_email }}',`
     * `session_id: shopifySessionID,`
-	  * `cart_id: shopifyCartID,`
+    * `cart_id: shopifyCartID,`
 4. Click **Save**.
 
 The new script will look something like this:
